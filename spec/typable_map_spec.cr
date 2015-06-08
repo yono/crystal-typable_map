@@ -36,7 +36,7 @@ describe "TypableMap" do
       inserted_obj = 3
       uniq_str = typable_map.push(inserted_obj)
 
-      fetched_obj = typable_map.get(uniq_str)
+      fetched_obj = typable_map[uniq_str]
       fetched_obj.should eq(inserted_obj)
     end
   end

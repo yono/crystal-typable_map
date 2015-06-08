@@ -18,7 +18,7 @@ ba bi bu be bo pa pi pu pe po
       @hash = Hash(String, Entry).new
     end
 
-    def get(id)
+    def [](id)
       @hash[id].obj
     end
 
