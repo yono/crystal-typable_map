@@ -28,6 +28,13 @@ describe "TypableMap" do
       uniq_str = typable_map.push(inserted_obj)
       uniq_str.should_not eq("aaaa")
     end
+
+    it "should pushed by <<" do
+      typable_map = TypableMap::TypableMap.new
+      inserted_obj = Hoge.new
+      uniq_str = typable_map << inserted_obj
+      uniq_str.should_not eq("aaaa")
+    end
   end
 
   describe "when pull object" do

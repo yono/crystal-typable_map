@@ -38,5 +38,7 @@ ba bi bu be bo pa pi pu pe po
       ret.reverse.join
     end
 
+    alias_method :<<, :push
+
   end
 end
