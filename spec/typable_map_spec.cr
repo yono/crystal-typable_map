@@ -1,5 +1,10 @@
 require "./spec_helper"
 
+class Hoge
+  def initialize
+  end
+end
+
 describe "TypableMap" do
   describe "when use default args" do
     it "should initialize" do
@@ -13,6 +18,13 @@ describe "TypableMap" do
     it "should generate uniq string" do
       typable_map = TypableMap::TypableMap.new
       inserted_obj = "test"
+      uniq_str = typable_map.push(inserted_obj)
+      uniq_str.should_not eq("aaaa")
+    end
+
+    it "should pushed any object" do
+      typable_map = TypableMap::TypableMap.new
+      inserted_obj = Hoge.new
       uniq_str = typable_map.push(inserted_obj)
       uniq_str.should_not eq("aaaa")
     end

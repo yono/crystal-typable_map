@@ -15,16 +15,17 @@ ba bi bu be bo pa pi pu pe po
       @seq = Roman.dup
       @seq.shuffle!
       @counter = Counter.new
-      @hash = Hash(String, String | Int32 | Bool).new
+      @hash = Hash(String, Entry).new
     end
 
     def get(id)
-      @hash[id]
+      @hash[id].obj
     end
 
     def push(obj)
       id = generate(@counter.next)
-      @hash[id] = obj
+      entry = Entry.new(obj)
+      @hash[id] = entry
       id
     end
 
